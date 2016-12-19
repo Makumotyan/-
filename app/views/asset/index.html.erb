@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Asset</h1>
+
+<table>
+  <thead>
+    <tr>
+      <!--<th>BTC Address</th>-->
+      <th>Open Asset Address</th>
+      <th>BTC Amount</th>
+      <th>Asset ID</th>
+      <th>Asset Quantity</th>
+      <th>Asset Amount</th>
+      <th>Account</th>
+      <!--<th>Asset Definition URL</th>-->
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @assets.each do |asset| %>
+      <tr>
+        <!--<td><%#= asset["address"] %></td>-->
+        <td><%= asset["oa_address"] %></td>
+        <td><%= asset["amount"] %></td>
+        <td><%= truncate(asset["asset_id"], :length => 20) %></td>
+        <td><%= asset["asset_quantity"] %></td>
+        <td><%= asset["asset_amount"] %></td>
+        <td><%= asset["account"] %></td>
+        <!--<td><%#= asset["asset_definition_url"] %></td>-->
+
+        <td>
+          <%= form_tag({ controller: :asset, action: :send_form }) do %>
+            <%= hidden_field_tag 'from_address', asset["oa_address"] %>
+            <%= hidden_field_tag 'asset_id', asset["asset_id"] %>
+            <%= hidden_field_tag 'asset_amount', asset["asset_amount"] %>
+            <%= submit_tag 'Send' %>
+          <% end %>
+        </td>
+
+        <!--<td><%#= link_to 'Show', asset %></td>-->
+        <!--<td><%#= link_to 'Edit', edit_asset_path(asset) %></td>-->
+        <!--<td><%#= link_to 'Destroy', asset, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+        <!--<td><%#= link_to 'Send', send_form_path + "?from_address=" + asset["oa_address"] %></td>-->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<!--<%#= link_to 'New Asset', new_asset_path %>-->

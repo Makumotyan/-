@@ -1,0 +1,9 @@
+<h1>Send Asset</h1>
+
+<%= form_tag({ controller: :asset, action: :sent }) do %>
+  <%= text_field_tag 'from_address', @from_address, size: 50 %><br>
+  <%= text_field_tag 'asset_id', @asset_id, size: 50 %><br>
+  <%= text_field_tag 'asset_amount', @asset_amount, size: 50 %><br>
+  <%= text_field_tag 'to_address', "", size: 50 %><br>
+  <%= submit_tag 'Send' %>
+<% end %>
