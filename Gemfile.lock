@@ -44,6 +44,7 @@ GEM
     bitcoin-ruby (0.0.9)
     builder (3.2.2)
     byebug (9.0.6)
+    chunky_png (1.3.8)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.2.x)
@@ -131,6 +132,8 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
+    rqrcode (0.10.1)
+      chunky_png (~> 1.0)
     sass (3.4.22)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -188,6 +191,7 @@ DEPENDENCIES
   openassets-ruby
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
+  rqrcode
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)

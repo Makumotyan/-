@@ -51,3 +51,5 @@ gem 'bitcoin'
 gem 'json'
 gem 'ffi'
 gem 'openassets-ruby'
+
+gem 'rqrcode'

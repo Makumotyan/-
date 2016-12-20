@@ -6,6 +6,10 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <% if request.path_info == "/asset/" %>
+      <%= raw "<meta http-equiv='refresh' content='5'>" %>
+    <% end %>
   </head>
 
   <body>

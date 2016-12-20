@@ -5,5 +5,6 @@
   <%= text_field_tag 'asset_id', @asset_id, size: 50 %><br>
   <%= text_field_tag 'asset_amount', @asset_amount, size: 50 %><br>
   <%= text_field_tag 'to_address', "", size: 50 %><br>
-  <%= submit_tag 'Send' %>
+  <%= submit_tag 'Send' %><br>
+  <%= qrcode_tag @from_address, module_size: 3 %>
 <% end %>
